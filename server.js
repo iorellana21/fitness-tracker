@@ -11,9 +11,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
-// mongoose.connect("mongodb+srv://iorellana:knickschzstrk21@cluster0.s4szp.mongodb.net/tracker?retryWrites=true&w=majority" || "mongodb://localhost/workout", { useNewUrlParser: true });
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/userdb", { useNewUrlParser: true });
-
 mongoose.connect(
     process.env.MONGODB_URI || 'mongodb://localhost/tracker',
     {
@@ -23,7 +20,6 @@ mongoose.connect(
         useFindAndModify: false
     }
 );
-
 
 const db = require("./models");
 
